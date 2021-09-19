@@ -17,7 +17,8 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     
     private JFrame window;
     private Timer timer;
-    
+    MousePolymorph mousemorph = new MousePolymorph (110,110);
+    ClickPolymorph clickmorph = new ClickPolymorph (120,200);
      //creating a vraible, but it is not an object//
    
     ArrayList <Polymorph> polymorphs = new ArrayList <Polymorph>();
@@ -25,7 +26,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     
     public static void main(String[] args) {
    	 new PolymorphWindow().buildWindow();
-   	 
+
     }
     public void polymor () {
     BluePolymorph bluemorph = new BluePolymorph(50,40);
@@ -34,6 +35,10 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     polymorphs.add(redmorph);
     CirclePolymorph circlemorph = new CirclePolymorph (80,60);
     polymorphs.add(circlemorph);
+    PicturePolymorph picturemorph = new PicturePolymorph (90,70);
+    polymorphs.add(picturemorph);
+    polymorphs.add(clickmorph);
+    polymorphs.add(mousemorph);
     }
     
     public void buildWindow(){
@@ -43,7 +48,9 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	 window.pack();
    	 window.setVisible(true);
-   	 
+   	 window.addMouseMotionListener(mousemorph);
+   	 window.addMouseListener(clickmorph);
+   	 polymor();
    	 //this is making object. ANytime you see an keyword new, that meant create an object//
    	 
    	 timer = new Timer(1000 / 30, this);

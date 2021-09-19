@@ -14,7 +14,7 @@ public class CirclePolymorph extends Polymorph{
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
 		angle++;
-		g.drawRect((int) (x+Math.sin(angle)),(int) (y+Math.cos(angle)), 60, 60);
+		g.drawRect((int) (x+Math.sin(angle)*30),(int) (y+Math.cos(angle)*30), 60, 60);
 		//this int will be casting the later values into int //
 		//tell the program that value wants to be treat as a int//
 	}
