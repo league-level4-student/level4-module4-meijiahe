@@ -11,8 +11,13 @@ public class Doctor {
 	public boolean makesHouseCalls() {
 		return false;
 	}
-public void assignPatient(Patient apatient) {
-		
+public void assignPatient(Patient apatient) throws DoctorFullException{
+	if (patients.size()<3) {
+		patients.add(apatient);
+	}
+	else {
+		throw new DoctorFullException ();
+	}
 	}
 
 public ArrayList <Patient> getPatients() {
@@ -20,6 +25,10 @@ public ArrayList <Patient> getPatients() {
 	
 }
 public void doMedicine() {
+	for (int i =0; i<patients.size();i++) {
+		patients.get(i).checkPulse();
+	}
+}
 	
 }
-}
+
