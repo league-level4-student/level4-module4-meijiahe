@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Hospital {
  ArrayList<Doctor> docs = new ArrayList<Doctor>();
  ArrayList<Patient> patients = new ArrayList<Patient>();
+ int docnum=0;
  public ArrayList <Doctor> getDoctors() {
 		return docs;
 		
@@ -25,7 +26,16 @@ public class Hospital {
   }
 
  public void assignPatientsToDoctors() {
-	 
+	 for (int i =0;i<patients.size();i++) {
+		try {
+			docs.get(docnum).assignPatient(patients.get(i));
+		} catch (DoctorFullException e) {
+			// TODO Auto-generated catch block
+			docnum++;
+			i--;
+			
+			}
+		}
+	 }
  }
   
-}
