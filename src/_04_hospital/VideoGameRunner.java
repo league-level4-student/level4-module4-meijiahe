@@ -1,49 +1,13 @@
 package _04_hospital;
 
+import javax.swing.JOptionPane;
+
 public class VideoGameRunner {
-
-	enum Nums{
-
-	    
-
-	    ZERO(0), ONE(1), TWO(2), THREE(3);
-
-	    
-
-	    int num;
-
-	    
-
-	    private Nums(int num) {
-
-	        this.num = num;
-
-	    }
-
-	    
-
-	    public int getNum() {
-
-	        return num;
-
-	    }
-
-
-
-	}
-
-
-
+	public static void main(String[] args) {
+		
 	
-
-	    public static void main(String[] args) {
-
-	        Nums num = Nums.TWO;
-
-	        
-
-	        System.out.println(num.getNum());
-
-	    }
-
+String input = JOptionPane.showInputDialog(null, "What is your name?");
+System.out.println(input);
+JOptionPane.showMessageDialog(null, "Welcome to my game");
+	}
 	}
